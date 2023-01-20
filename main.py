@@ -4,7 +4,7 @@ import time
 import playsound
 import speech_recognition as sr
 
-def listen_command():
+def listen_command() -> object:
     # obtain audio from the microphone
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -31,7 +31,7 @@ def do_this_command(message):
         say_message("Пока!")
         exit()
     else:
-        say_message("Команда не распознана!")
+        say_message("Команда не распознано!")
 
 def say_message(message):
     voice = gTTS(message, lang="ru")
